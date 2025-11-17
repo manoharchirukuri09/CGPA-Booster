@@ -122,7 +122,8 @@ Fork the repository → Make enhancements → Submit a PR.
 ## 📧 **Contact**
 
 **For queries or collaborations:**
-**Chirukuri Manohar**
+**Chirukuri Manohar**.
+
 📩 **Email:** (mailto:manoharchirukuri2909@gmail.com).
 
 🔗 **LinkedIn:** (https://linkedin.com/in/manoharchirukuri).
