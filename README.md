@@ -1,5 +1,3 @@
-Here is your **professionally rewritten, polished, resume-quality, GitHub-friendly README.md** — clean formatting, perfect grammar, and a strong tech-portfolio tone.
-
 ---
 
 # 📊 **CGPA Booster – Academic Target Simulator**
@@ -124,10 +122,8 @@ Fork the repo → Make changes → Submit a PR.
 ---
 
 ## 📧 **Contact**
-
 **For queries or collaborations:**
 **Chirukuri Manohar**
-📩 **[manoharchirukuri2909@gmail.com](mailto:manoharchirukuri2909@gmail.com)**
-🔗 **Portfolio:** *Add link here if available*
-🔗 **LinkedIn:** [https://linkedin.com/in/manoharchirukuri](https://linkedin.com/in/manoharchirukuri)
-🔗 **GitHub:** [https://github.com/manoharchirukuri09](https://github.com/manoharchirukuri09)
+📩 **Gmail**(mailto:manoharchirukuri2909@gmail.com)
+🔗 **LinkedIn:** (https://linkedin.com/in/manoharchirukuri)
+🔗 **GitHub:** (https://github.com/manoharchirukuri09)
