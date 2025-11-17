@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPGA Booster: Academic Target Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<main>
+    <h1>CPGA Booster 🚀</h1>
+
+    <!-- Motivational Quote -->
+    <div class="quote-box">
+        <span id="motivationalQuote">
+            Your future is created by what you do today, not tomorrow.
+        </span>
+    </div>
+
+    <!-- Tabs -->
+    <ul class="tablist" role="tablist">
+        <li class="tab" id="tab-1" role="tab" aria-controls="panel-1"
+            aria-selected="true" tabindex="0">Boost CPGA</li>
+
+        <li class="tab" id="tab-2" role="tab" aria-controls="panel-2"
+            aria-selected="false" tabindex="-1">CPGA → %</li>
+
+        <li class="tab" id="tab-3" role="tab" aria-controls="panel-3"
+            aria-selected="false" tabindex="-1">% → CPGA</li>
+    </ul>
+
+    <!-- Panel 1: Boost CPGA -->
+    <section id="panel-1" class="tabpanel" role="tabpanel"
+             aria-labelledby="tab-1" aria-hidden="false">
+
+        <form id="boostCgpaForm">
+            <div class="boost-grid">
+
+                <!-- Current Status -->
+                <div class="card">
+                    <h2>Current Status</h2>
+
+                    <div class="form-group">
+                        <label for="currentCgpa">Current CPGA (0.00 - 10.00)</label>
+                        <input type="number" id="currentCgpa" min="0" max="10"
+                               step="0.01" required value="7.5">
+                        <span class="microcopy">Your cumulative score so far.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="completedSemesters">Completed Semesters (1 - 8)</label>
+                        <input type="number" id="completedSemesters" min="1" max="7"
+                               required value="4">
+                        <span class="microcopy">Semesters already included in your CPGA.</span>
+                    </div>
+                </div>
+
+                <!-- Future Planning -->
+                <div class="card">
+                    <h2>Future Planning</h2>
+
+                    <div class="form-group">
+                        <label for="plannedSemesters">Planned Future Semesters (1 - 8)</label>
+                        <input type="number" id="plannedSemesters" min="1" max="8"
+                               required value="2">
+                        <span class="microcopy" id="remainingSemestersInfo">
+                            Remaining semesters
+                        </span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="targetCgpa">Target Final CPGA</label>
+                        <input type="number" id="targetCgpa" min="0" max="10"
+                               step="0.01" required value="8.5">
+                        <span class="microcopy">Your desired graduation CPGA.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expected Grade Input -->
+            <div class="card" style="margin-top: 20px;">
+                <h2>Expected Grades Input</h2>
+
+                <div class="form-group">
+                    <label>
+                        <input type="radio" id="inputMethodAvg" name="inputMethod"
+                               value="average" checked>
+                        Use average CPGA for all remaining semesters
+                    </label>
+
+                    <label>
+                        <input type="radio" id="inputMethodIndividual" name="inputMethod"
+                               value="individual">
+                        Enter CPGA for each remaining semester
+                    </label>
+                </div>
+
+                <!-- Average CPGA -->
+                <div id="averageInput" class="form-group">
+                    <label for="expectedAverageCgpa">Expected Average CPGA</label>
+                    <input type="number" id="expectedAverageCgpa" min="0" max="10"
+                           step="0.01" value="9.0">
+                    <span class="microcopy">Best guess for future CPGA.</span>
+                </div>
+
+                <!-- Individual Inputs -->
+                <div id="individualInputs" style="display: none;"></div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="form-group form-actions">
+                <button type="submit" class="btn btn-primary" id="calculateBoostBtn">
+                    Calculate Projected CPGA
+                </button>
+
+                <button type="button" class="btn btn-secondary" id="reloadResetBtn">
+                    Reload / Reset <div class="reload-spinner"></div>
+                </button>
+            </div>
+        </form>
+
+        <!-- Results -->
+        <div id="boostResults" class="results-section" style="display: none;">
+            <h2>Simulation Results</h2>
+
+            <div class="result-item">
+                Projected Final CPGA: <strong id="projectedCgpaValue">--</strong>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" role="progressbar"
+                     aria-valuemin="0" aria-valuemax="10"></div>
+            </div>
+
+            <div id="targetStatusMessage" class="status-message"></div>
+            <p id="minAverageRequired" class="result-item"></p>
+
+            <span class="microcopy">
+                Note: All semesters are weighted equally.
+            </span>
+
+            
+
+            <div id="boostExplanation" class="explanation-content">
+                <h3>How the Calculation Works</h3>
+                <ol>
+                    <li><strong>Total Semesters:</strong> Completed + Planned</li>
+                    <li><strong>CPGA Points So Far:</strong> Current × Completed</li>
+                    <li><strong>Expected Future Points:</strong> Avg × Planned</li>
+                    <li><strong>Projected CPGA:</strong> (Total Points) ÷ Total Semesters</li>
+                    <li><strong>Min Avg Required:</strong> Inverse formula</li>
+                </ol>
+                <div id="mathDetails"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Panel 2: CPGA to Percentage -->
+    <section id="panel-2" class="tabpanel" role="tabpanel"
+             aria-labelledby="tab-2" aria-hidden="true">
+
+        <div class="conversion-input-output">
+            <div class="card">
+                <h2>Input</h2>
+                <div class="form-group">
+                    <label for="cpgaToPercentInput">CPGA (0.00 - 10.00)</label>
+                    <input type="number" id="cpgaToPercentInput" min="0" max="10"
+                           step="0.01" oninput="calculateCgpaToPercent()">
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Output</h2>
+                <div class="form-group">
+                    <label>Equivalent Percentage (%)</label>
+                    <input type="text" id="percentOutput" readonly>
+                    <span class="microcopy" id="cpgaToPercentMicrocopy"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Panel 3: Percentage to CPGA -->
+    <section id="panel-3" class="tabpanel" role="tabpanel"
+             aria-labelledby="tab-3" aria-hidden="true">
+
+        <div class="conversion-input-output">
+            <div class="card">
+                <h2>Input</h2>
+                <div class="form-group">
+                    <label for="percentToCgpaInput">Percentage (0 - 100)</label>
+                    <input type="number" id="percentToCgpaInput" min="0" max="100"
+                           step="0.01" oninput="calculatePercentToCgpa()">
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Output</h2>
+                <div class="form-group">
+                    <label>Equivalent CPGA</label>
+                    <input type="text" id="cpgaOutput" readonly>
+                    <span class="microcopy" id="percentToCgpaMicrocopy"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
