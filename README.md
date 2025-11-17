@@ -1,12 +1,10 @@
----
-
 # 📊 **CGPA Booster – Academic Target Simulator**
 
 ### *A Modern Web App to Predict, Plan & Boost Academic Performance*
 
-**CGPA Booster** is an academic analytics and planning tool built using **HTML, CSS, and JavaScript**. It helps students **simulate their final CGPA**, plan upcoming semesters, convert **CGPA ↔ Percentage**, and track academic goals using a clean and interactive interface.
+**CGPA Booster** is an academic analytics and planning tool built using **HTML, CSS, and JavaScript**. It enables students to **simulate their final CGPA**, plan upcoming semesters, convert **CGPA ↔ Percentage**, and track academic progress with an intuitive and responsive interface.
 
-This app is designed to assist students in **placement preparation, academic forecasting, and performance planning** by visualizing how future semester scores impact the final CGPA.
+This project is especially helpful for **placement preparation, academic forecasting, and semester planning**, allowing students to understand how their future scores impact their final CGPA.
 
 ---
 
@@ -21,46 +19,46 @@ This app is designed to assist students in **placement preparation, academic for
 ### 🔥 1. **CGPA Boost Simulator**
 
 * Enter current CGPA & completed semesters
-* Plan remaining semesters with:
+* Plan remaining semesters using:
 
   * **Average CGPA input**, or
-  * **Individual semester-wise CGPA values**
-* Automatic result generation including:
+  * **Individual semester-wise CGPA**
+* Automatically displays:
 
   * ✔ Projected final CGPA
-  * ✔ Minimum CGPA required in remaining semesters
+  * ✔ Required CGPA for remaining semesters
   * ✔ Visual progress bar
-  * ✔ Success/Fail target indicator
+  * ✔ Target Achievement Indicator (Success / Fail)
 
 ---
 
 ### 🎓 2. **CGPA → Percentage Converter**
 
-* Converts CGPA to Percentage using:
+* Converts using the standard formula:
   **Percentage = CGPA × 9.5**
 * Real-time calculations
-* 0–100% validation
-* Instant display as the user types
+* Validates range between 0–100%
+* Instant updates while typing
 
 ---
 
 ### 🧮 3. **Percentage → CGPA Converter**
 
-* Converts Percentage to CGPA using:
+* Converts using:
   **CGPA = Percentage ÷ 9.5**
-* Real-time updates
-* Formula helper text included
+* Real-time preview
+* Helpful formula hints
 
 ---
 
 ### ✨ 4. **Additional Enhancements**
 
 * Dynamic motivational quotes
-* LocalStorage-based auto-save
-* Keyboard shortcut **R** → Reset
-* Accessible TAB navigation
-* Responsive UI for all screen sizes
-* Smooth fade and progress animations
+* Auto-save using LocalStorage
+* Keyboard Shortcut **R** → Reset
+* Full TAB accessibility
+* Responsive design for all devices
+* Smooth animations & transitions
 
 ---
 
@@ -77,16 +75,16 @@ This app is designed to assist students in **placement preparation, academic for
 
 ## 📸 **Screenshots**
 
-<img width="1786" height="1031" alt="image" src="https://github.com/user-attachments/assets/8d0c453a-e2a4-4eb7-824b-df2d4060d228" />
-<img width="1818" height="941" alt="image" src="https://github.com/user-attachments/assets/a5518628-d139-4277-8649-579e96184636" />
-<img width="1812" height="1027" alt="image" src="https://github.com/user-attachments/assets/863c4c3e-de63-4c4d-8fb3-9536baee6f1d" />
+<img width="1786" src="https://github.com/user-attachments/assets/8d0c453a-e2a4-4eb7-824b-df2d4060d228" />
+<img width="1818" src="https://github.com/user-attachments/assets/a5518628-d139-4277-8649-579e96184636" />
+<img width="1812" src="https://github.com/user-attachments/assets/863c4c3e-de63-4c4d-8fb3-9536baee6f1d" />
 
 ---
 
 ## 📂 **Folder Structure**
 
 ```
-CPGA-Booster/
+CGPA-Booster/
 │── index.html
 │── style.css
 │── script.js
@@ -99,31 +97,35 @@ CPGA-Booster/
 
 ### ✔ Option 1 — VS Code Live Server
 
-1. Install **Live Server** extension
+1. Install the **Live Server** extension
 2. Right-click `index.html` → **Open with Live Server**
 
 ---
 
 ## 🚀 **Future Enhancements**
 
-* User login system with cloud storage
+* User authentication with cloud data storage
 * CGPA timeline graphs (Chart.js / Recharts)
-* Light & Dark mode toggle
-* Mobile app version using React Native
-* Backend API for long-term academic tracking
+* Light/Dark theme toggle
+* Mobile app version (React Native)
+* Backend API for persistent academic tracking
 
 ---
 
 ## 🤝 **Contributions**
 
-Contributions, improvements, and ideas are always welcome!
-Fork the repo → Make changes → Submit a PR.
+Contributions, suggestions, and improvements are always welcome!
+Fork the repository → Make enhancements → Submit a PR.
 
 ---
 
 ## 📧 **Contact**
+
 **For queries or collaborations:**
 **Chirukuri Manohar**
-📩 **Gmail**(mailto:manoharchirukuri2909@gmail.com)
-🔗 **LinkedIn:** (https://linkedin.com/in/manoharchirukuri)
-🔗 **GitHub:** (https://github.com/manoharchirukuri09)
+📩 **Email:** [manoharchirukuri2909@gmail.com](mailto:manoharchirukuri2909@gmail.com)
+🔗 **LinkedIn:** [https://linkedin.com/in/manoharchirukuri](https://linkedin.com/in/manoharchirukuri)
+🔗 **GitHub:** [https://github.com/manoharchirukuri09](https://github.com/manoharchirukuri09)
+
+---
+
